@@ -11,7 +11,9 @@ from redis.commands.search.field import NumericField, TagField, TextField
 from redis.commands.search.indexDefinition import IndexDefinition, IndexType
 from redis.commands.search.query import Query
 
-r = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
+redis_host = os.getenv('REDIS_HOST', 'localhost')
+r = redis.Redis(host=redis_host, port=6379, decode_responses=True)
+
 bicycle = {
     "brand": "Velorim",
     "model": "Jigger",
