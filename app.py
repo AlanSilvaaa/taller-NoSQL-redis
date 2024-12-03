@@ -1,1 +1,0 @@
-print("this is app.py in the root directory")
