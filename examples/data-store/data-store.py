@@ -1,6 +1,9 @@
 import os
 import redis
 
+# Connect to Redis
+# use the REDIS_HOST environment variable if running on docker
+# or localhost if running localy
 redis_host = os.getenv('REDIS_HOST', 'localhost')
 r = redis.Redis(host=redis_host, port=6379, decode_responses=True)
 
