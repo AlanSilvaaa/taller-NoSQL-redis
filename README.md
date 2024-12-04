@@ -13,5 +13,5 @@ docker compose up --build -d
 
 run an especific file, e.g. data-store (for dante and lucas: modify the entrypoint to add more examples that can be runned with docker)
 ```bash
-docker compose run python-app data-store
+docker compose run --rm python-app data-store
 ```
