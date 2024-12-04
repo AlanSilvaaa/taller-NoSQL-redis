@@ -11,7 +11,7 @@ start docker (dont forget to stop it after)
 docker compose up --build -d
 ```
 
-run an especific file, from an especific folder, e.g. document-database (for dante and lucas: modify the entrypoint to add more examples that can be runned with docker)
+run an especific file, from an especific folder, e.g. document-database create (for dante and lucas: modify the entrypoint to add more examples that can be runned with docker)
 ```bash
 docker compose run --rm document-database create
 docker compose run --rm document-database query
