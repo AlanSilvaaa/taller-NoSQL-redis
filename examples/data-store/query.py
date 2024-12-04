@@ -1,0 +1,1 @@
+print("here it should be the query example for data-store")
