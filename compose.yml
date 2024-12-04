@@ -6,13 +6,20 @@ services:
       - "6379:6379"
       - "8001:8001"
 
-  python-app:
+  document-database:
     build: .
-    container_name: python-app
-    # volumes:
-    #   - .:/app
+    container_name: document-database-app
     depends_on:
       - redis-stack
     environment:
       - REDIS_HOST=redis-stack
-    entrypoint: ["/entrypoint.sh"]
+    entrypoint: ["/entrypoint.sh", "document-database"]
+
+  data-store:
+    build: .
+    container_name: data-store-app
+    depends_on:
+      - redis-stack
+    environment:
+      - REDIS_HOST=redis-stack
+    entrypoint: ["/entrypoint.sh", "data-store"]
